@@ -26,8 +26,9 @@ package finance;
 message Charge {
     string alias = 1;
     PaymentProcessor processor = 2;
-    string payment_id = 3;
-    string charge_id = 4;
+    string customer_id = 3;
+    string payment_id = 4;
+    string charge_id = 5;
 }
 
 message Customer {
