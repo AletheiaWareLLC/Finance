@@ -24,36 +24,40 @@ option optimize_for = LITE_RUNTIME;
 package finance;
 
 message Charge {
-    string alias = 1;
-    PaymentProcessor processor = 2;
-    string customer_id = 3;
-    string payment_id = 4;
-    string charge_id = 5;
+    string merchant_alias = 1;
+    string customer_alias = 2;
+    PaymentProcessor processor = 3;
+    string customer_id = 4;
+    string payment_id = 5;
+    string charge_id = 6;
 }
 
-message Customer {
-    string alias = 1;
-    PaymentProcessor processor = 2;
-    string customer_id = 3;
-    string payment_id = 4;
+message Registration {
+    string merchant_alias = 1;
+    string customer_alias = 2;
+    PaymentProcessor processor = 3;
+    string customer_id = 4;
+    string payment_id = 5;
 }
 
 message Subscription {
-    string alias = 1;
-    PaymentProcessor processor = 2;
-    string customer_id = 3;
-    string payment_id = 4;
-    string product_id = 5;
-    string plan_id = 6;
-    string subscription_id = 7;
-    string subscription_item_id = 8;
+    string merchant_alias = 1;
+    string customer_alias = 2;
+    PaymentProcessor processor = 3;
+    string customer_id = 4;
+    string payment_id = 5;
+    string product_id = 6;
+    string plan_id = 7;
+    string subscription_id = 8;
+    string subscription_item_id = 9;
 }
 
 message UsageRecord {
-    string alias = 1;
-    PaymentProcessor processor = 2;
-    string subscription_id = 3;
-    string usage_record_id = 4;
+    string merchant_alias = 1;
+    string customer_alias = 2;
+    PaymentProcessor processor = 3;
+    string subscription_id = 4;
+    string usage_record_id = 5;
 }
 
 enum PaymentProcessor {
