@@ -30,6 +30,7 @@ message Charge {
     string customer_id = 4;
     string payment_id = 5;
     string charge_id = 6;
+    int64 amount = 7;
 }
 
 message Registration {
