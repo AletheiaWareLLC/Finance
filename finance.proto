@@ -62,6 +62,43 @@ message UsageRecord {
     int64 quantity = 6;
 }
 
+message Product {
+    string country = 1;
+    string currency = 2;
+    int64 unit_price = 3;
+    finance.PaymentProcessor processor = 4;
+    string publishable_key = 5;
+    string product_id = 6;
+}
+
+message Service {
+    string country = 1;
+    string currency = 2;
+    enum Interval {
+        UNKNOWN_INTERVAL = 0;
+        DAILY = 1;
+        WEEKLY = 2;
+        MONTHLY = 3;
+        QUARTERLY = 4; // Every 3 months
+        YEARLY = 5;
+    }
+    Interval interval = 3;
+    enum Mode {
+        UNKNOWN_MODE = 0;
+        FIXED_AMOUNT = 1; // a fixed amount per interval
+        METERED_SUM_USAGE = 2; // the sum of usage records per interval
+        METERED_MAX_USAGE = 3; // the maximum of usage record per interval
+        METERED_LAST_USAGE = 4; // the most recent usage record per interval
+    }
+    Mode mode = 4;
+    int64 group_price = 5; // Eg. 5c or 15c
+    int64 group_size = 6; // Eg. 1000000 ($0.05/Mb) or 1000000000 ($0.15/Gb/Mo)
+    finance.PaymentProcessor processor = 7;
+    string publishable_key = 8;
+    string product_id = 9;
+    string plan_id = 10;
+}
+
 enum PaymentProcessor {
     UNKNOWN_PROCESSOR = 0;
     STRIPE = 1;
