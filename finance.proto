@@ -59,6 +59,7 @@ message UsageRecord {
     PaymentProcessor processor = 3;
     string subscription_id = 4;
     string usage_record_id = 5;
+    int64 quantity = 6;
 }
 
 enum PaymentProcessor {
