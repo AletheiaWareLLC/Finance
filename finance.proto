@@ -62,18 +62,31 @@ message UsageRecord {
     int64 quantity = 6;
 }
 
+message Merchant {
+    string alias = 1;
+    // The domain name of the merchant
+    // Eg. space.aletheiaware.com
+    string domain = 2;
+    finance.PaymentProcessor processor = 3;
+    string publishable_key = 4;
+    string register_url = 5;
+}
+
 message Product {
-    string country = 1;
-    string currency = 2;
-    int64 unit_price = 3;
-    finance.PaymentProcessor processor = 4;
-    string publishable_key = 5;
-    string product_id = 6;
+    string product_id = 1;
+    string country = 2;
+    string currency = 3;
+    int64 unit_price = 4;
+    string purchase_url = 5;
 }
 
 message Service {
-    string country = 1;
-    string currency = 2;
+    string product_id = 1;
+    string plan_id = 2;
+    string country = 3;
+    string currency = 4;
+    int64 group_price = 5; // Eg. 5c or 15c
+    int64 group_size = 6; // Eg. 1000000 ($0.05/Mb) or 1000000000 ($0.15/Gb/Mo)
     enum Interval {
         UNKNOWN_INTERVAL = 0;
         DAILY = 1;
@@ -82,7 +95,7 @@ message Service {
         QUARTERLY = 4; // Every 3 months
         YEARLY = 5;
     }
-    Interval interval = 3;
+    Interval interval = 7;
     enum Mode {
         UNKNOWN_MODE = 0;
         FIXED_AMOUNT = 1; // a fixed amount per interval
@@ -90,13 +103,8 @@ message Service {
         METERED_MAX_USAGE = 3; // the maximum of usage record per interval
         METERED_LAST_USAGE = 4; // the most recent usage record per interval
     }
-    Mode mode = 4;
-    int64 group_price = 5; // Eg. 5c or 15c
-    int64 group_size = 6; // Eg. 1000000 ($0.05/Mb) or 1000000000 ($0.15/Gb/Mo)
-    finance.PaymentProcessor processor = 7;
-    string publishable_key = 8;
-    string product_id = 9;
-    string plan_id = 10;
+    Mode mode = 8;
+    string subscribe_url = 9;
 }
 
 enum PaymentProcessor {
