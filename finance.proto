@@ -19,7 +19,6 @@ syntax = "proto3";
 option go_package = "github.com/AletheiaWareLLC/financego";
 option java_outer_classname = "FinanceProto";
 option java_package = "com.aletheiaware.finance";
-option optimize_for = LITE_RUNTIME;
 
 package finance;
 
