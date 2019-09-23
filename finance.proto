@@ -84,6 +84,9 @@ message UsageRecord {
     string subscription_id = 4;
     string usage_record_id = 5;
     int64 quantity = 6;
+    string subscription_item_id = 7;
+    string product_id = 8;
+    string plan_id = 9;
 }
 
 message Merchant {
