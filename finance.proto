@@ -30,6 +30,31 @@ message Charge {
     string payment_id = 5;
     string charge_id = 6;
     int64 amount = 7;
+    string invoice_id = 8;
+    string receipt_url = 9;
+    string product_id = 10;
+    string plan_id = 11;
+    string country = 12;
+    string currency = 13;
+    string description = 14;
+}
+
+message Invoice {
+    string merchant_alias = 1;
+    string customer_alias = 2;
+    PaymentProcessor processor = 3;
+    string customer_id = 4;
+    string payment_id = 5;
+    string invoice_id = 6;
+    string invoice_url = 7;
+    string product_id = 8;
+    string plan_id = 9;
+    string country = 10;
+    string currency = 11;
+    string number = 12;
+    int64 amount_due = 13;
+    int64 amount_paid = 14;
+    int64 amount_remaining = 15;
 }
 
 message Registration {
