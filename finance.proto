@@ -129,6 +129,7 @@ message Service {
         METERED_SUM_USAGE = 2; // the sum of usage records per interval
         METERED_MAX_USAGE = 3; // the maximum of usage record per interval
         METERED_LAST_USAGE = 4; // the most recent usage record per interval
+        METERED_LAST_USAGE_EVER = 5; // the most recent usage record ever
     }
     Mode mode = 8;
     string subscribe_url = 9;
