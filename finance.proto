@@ -16,7 +16,7 @@
 
 syntax = "proto3";
 
-option go_package = "github.com/AletheiaWareLLC/financego";
+option go_package = "aletheiaware.com/financego";
 option java_outer_classname = "FinanceProto";
 option java_package = "com.aletheiaware.finance";
 
